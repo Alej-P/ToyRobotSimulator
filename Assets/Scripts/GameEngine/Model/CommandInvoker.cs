@@ -51,6 +51,8 @@ public class CommandInvoker
     public void ParseCommand(string commandAndArguments, out string commandName, out string[] arguments)
     {
         arguments = null;
+        commandAndArguments = commandAndArguments.Replace("\r", ""); 
+
         int firstSpace = commandAndArguments.IndexOf(' ');
         if (firstSpace == -1)
         {
